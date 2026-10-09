@@ -10,9 +10,8 @@ I was a contributor to this thesis, alongside Androniki Kolete. I was responsibl
 #### 1. [Block_Diagrams](/Block_Diagrams)
 Contains block diagrams for every hardware part of the project, including a block-diagram of the full project principle.
 
-#### 2. [ESP_32_code](/ESP_32_code)
+#### 2. [ESP32_code](/ESP32_code)
 Contains the ESP-32 Arduino IDE programming files for Transmitter & Receiver parts of the project.
-
 
 #### 3. [Schematics](/Schematics)
 Contains PDF files of Altium Designer Schematics of Transmitter and Receiver parts.
