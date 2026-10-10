@@ -1,6 +1,6 @@
 # ESP-32 Environmental Data Acquisition System
-This project was my Integrated Master's Thesis in Department of Informatics & Electronics Engineering of International Hellenic University (IHU).
-I was a contributor to this thesis, alongside Androniki Kolete. Her part of the project (database, web interface) can be found [here]().
+This project was my Integrated Master's Thesis in Department of Informatics & Electronics Engineering of International Hellenic University (IHU), alongside Androniki Kolete. 
+Her part of the project (database, web interface) can be found [here]().
 I was responsible for the hardware engineering part of the project, including the ESP-32, designing the sensors and the PCB and also the power supply.
 
 ## Purpose - Key Objective
@@ -19,6 +19,21 @@ Second part is the **_Receiver_** which is the base station for all transmitter 
 
 Third part of the project are the **_Web Services_**, including Frontend and Backend of our Web application. All measured data are formatted and stored in the database for processing using Business Logic.
 Afterwards, data visualization or extraction in CSV format is available using the website. 
+
+## Measured Data
+The system is capable of measuring 8 different environmental parameters both atmospheric and soil.
+
+#### Atmospheric Data
+- Air Temperature: BME-280 sensor
+- Air Humidity: BME-280 sensor
+- Barometric Pressure: BME-280 sensor
+- Rain Depth: Own design, using tipping bucket principle and Hall Effect Sensor A3144
+- Wind Speed: Own design, using cup anemometer principle and Hall Effect Sensor A3144
+- Wind Direction: Own design, using Hall Effect Sensors A3144
+
+#### Soil Data
+- Soil Temperature: Own design, analog sensor using NTC thermistor probe, Wheatstone bridge and instrumentation amplifier topology.
+- Soil Moisture: Own design, analog sensor based on Capacitive Soil Moisture Sensors. 
 
 ## Project Index
 #### 1. [Block_Diagrams](/Block_Diagrams)
