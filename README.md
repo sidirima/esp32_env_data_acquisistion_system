@@ -6,6 +6,7 @@ I was responsible for the hardware engineering part of the project, including th
 ## Purpose - Key Objective
 The purpose of the project is to design and implement an IoT system capable of measuring environmental parameters in situ. The parameters chosen were those conducive to the optimal management of arable land. Data are then collected via an ESP-32 microcontroller and subsequently transmitted from the node to a gateway, where they are stored in a database. This allows for subsequent data processing and visualization via a web interface.
 
+Design of the web interface prioritizes the User Experience (UX), creating a user-friendly website which offers many visualization preferences, notifications and statistics about the stored data.
 
 ## Full System Block Diagram
 In the Figure below we can see the 3 distinct parts of the project. 
