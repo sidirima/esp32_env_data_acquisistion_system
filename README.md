@@ -1,19 +1,24 @@
 # ESP-32 Environmental Data Acquisition System
-
-The purpose of the project is to design and implement an IoT system capable of measuring environmental parameters in situ. The parameters chosen were those conducive to the optimal management of arable land. Data are then collected via an ESP-32 microcontroller and subsequently transmitted from the node to a gateway, where they are stored in a database. This allows for subsequent data processing and visualization via a web interface.
-
-## Full System Block Diagram
-In the Figure below we can see the 3 distinct parts of the project. 
-![alt text](https://github.com/sidirima/esp32_env_data_acquisistion_system/blob/main/Block_Diagrams/Full_project.png)
-The first one is the **Transmitter Node**, which is responsible for measuring and transmitting the data to a base station. This node is solar powered via a power supply unit consisting of a Solar Power Manager, a typical 18650 battery and a 5W PV Panel.
-The project is scalable, so we can use multiple Transmitter nodes in a field, or in different fields, provided that there is a base station nearby.
-
-
-
 This project was my Integrated Master's Thesis in Department of Informatics & Electronics Engineering of International Hellenic University (IHU).
 I was a contributor to this thesis, alongside Androniki Kolete. Her part of the project (database, web interface) can be found [here]().
 I was responsible for the hardware engineering part of the project, including the ESP-32, designing the sensors and the PCB and also the power supply.
 
+## Purpose - Key Objective
+The purpose of the project is to design and implement an IoT system capable of measuring environmental parameters in situ. The parameters chosen were those conducive to the optimal management of arable land. Data are then collected via an ESP-32 microcontroller and subsequently transmitted from the node to a gateway, where they are stored in a database. This allows for subsequent data processing and visualization via a web interface.
+
+
+## Full System Block Diagram
+In the Figure below we can see the 3 distinct parts of the project. 
+
+![alt text](https://github.com/sidirima/esp32_env_data_acquisistion_system/blob/main/Block_Diagrams/Full_project.png)
+
+The first one is the **_Transmitter Node_**, which is responsible for measuring and transmitting the data to a base station. This node is solar powered via a power supply unit consisting of a Solar Power Manager, a typical 18650 battery and a 5W PV Panel.
+The project is scalable, so we can use multiple Transmitter nodes in a field, or in different fields, provided that there is a base station nearby.
+
+Second part is the **_Receiver_** which is the base station for all transmitter nodes. We establish communication between transmitter nodes and the receiver via LoRa protocol. Using LoRa, we can establish a maximum distance of 10 km between a node and the base station and it is also very energy efficient. Placement of the receiver must be done somewhere that there is an available powerline and an internet connection. Reason for that is because data from the receiver are then stored to the database using Wi-Fi.
+
+Third part of the project are the **_Web Services_**, including Frontend and Backend of our Web application. All measured data are formatted and stored in the database for processing using Business Logic.
+Afterwards, data visualization or extraction in CSV format is available using the website. 
 
 ## Project Index
 #### 1. [Block_Diagrams](/Block_Diagrams)
