@@ -34,7 +34,11 @@ The system is capable of measuring 8 different environmental parameters both atm
 
 #### Soil Data
 - Soil Temperature: Own design, analog sensor using NTC thermistor probe, Wheatstone bridge and instrumentation amplifier topology.
-- Soil Moisture: Own design, analog sensor based on Capacitive Soil Moisture Sensors. 
+- Soil Moisture: Own design, analog sensor based on Capacitive Soil Moisture Sensors.
+
+## Analog Sensors Working Principles
+### Soil Temperature Sensor
+As shown in the block diagram below, temperature of soil is calculated using an NTC Thermistor, which is a special kind of resistor capable of varying its resistance according to temperature fluctuations.
 
 ## Project Index
 #### 1. [Block_Diagrams](/Block_Diagrams)
