@@ -4,10 +4,11 @@ The purpose of the project is to design and implement an IoT system capable of m
 
 ## Full System Block Diagram
 In the Figure below we can see the 3 distinct parts of the project. 
-<p align = "center">
-  <img src ="www.github.com/sidirima/esp32_env_data_acquisition_system/main/Block_Diagrams/Full_project.png">
-</p>
-The first one is the **Transmitter Node**, which is responsible for measuring and transmitting the data to a base station.
+![alt text](https://github.com/sidirima/esp32_env_data_acquisistion_system/blob/main/Block_Diagrams/Full_project.png)
+The first one is the **Transmitter Node**, which is responsible for measuring and transmitting the data to a base station. This node is solar powered via a power supply unit consisting of a Solar Power Manager, a typical 18650 battery and a 5W PV Panel.
+The project is scalable, so we can use multiple Transmitter nodes in a field, or in different fields, provided that there is a base station nearby.
+
+
 
 This project was my Integrated Master's Thesis in Department of Informatics & Electronics Engineering of International Hellenic University (IHU).
 I was a contributor to this thesis, alongside Androniki Kolete. Her part of the project (database, web interface) can be found [here]().
