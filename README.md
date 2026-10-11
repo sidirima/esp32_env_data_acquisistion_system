@@ -39,6 +39,14 @@ The system is capable of measuring 8 different environmental parameters both atm
 ## Analog Sensors Working Principles
 ### Soil Temperature Sensor
 As shown in the block diagram below, temperature of soil is calculated using an NTC Thermistor, which is a special kind of resistor capable of varying its resistance according to temperature fluctuations.
+We prefer to use a passive resistive element instead of an RTD due to its low power consumption.
+
+![alt text](https://github.com/sidirima/esp32_env_data_acquisistion_system/blob/main/Block_Diagrams/Soil_temperature_sensor.png)
+
+To measure temperature fluctuations of the NTC Thermistor we use a **Wheatstone bridge** topology, consisting of 4 resistors connected in 2 parallel branches, each consisting of 2 series resistors. We connect a DC voltage source (5V) at one end of the branch as shown in the picture and the other side is connected to ground. When the two branches of the bridge are balanced, the output voltage is 0V.
+
+The differential output of the bridge is then connected to an **Instrumentation Amplifier**, a special Operational Amplifier topology frequently used in analog sensors. This circuit is designed to amplify the very sensitive signals of passive analog sensors. Reason for that is that the differential signals are quite smaller than common mode signals, therefore a common operational amplifier could not offer the desired amplification. Although we can find many instrumentation amplifier ICs ready to use, we prefer to use a simple LMC662 operational amplifier IC due to its significantly lower price. It is important to use a rail-to-rail operational amplifier IC so as to measure most accurate voltage readings.
+
 
 ## Project Index
 #### 1. [Block_Diagrams](/Block_Diagrams)
