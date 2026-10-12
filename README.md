@@ -61,7 +61,13 @@ Using a simple silicon diode (1N4148) as a **peak detector** circuit, we can det
 ## Choosing an Analog-to-Digital Converter (ADC)
 The ESP-32 family of microcontrollers has an internal 12-bit **Analog-to-Digital Converter**, although it is recommended to use an external one due to its poor linearity when dealing with accurate sensor signals, specifically when using wireless connections, due to electromagnetic noise. 
 
-In our project, we decided to use the ADS1015, which is a 12-bit resolution ADC as well. This ADC is very commonly used in ESP-32 projects and there are many libraries in Arduino IDE supporting it. This specific IC supports both I²C and SPI serial communication protocols.
+In our project, we decided to use the ADS1015, which is a 12-bit resolution ADC as well. This ADC is very commonly used in ESP-32 projects and there are many libraries in Arduino IDE supporting it. This specific IC supports both I²C and SPI serial communication protocols. We chose the I²C protocol. This IC comes only in SMD packaging, so we use a DIP module for easier PCB assembling.
+
+## Logic Level Shifting
+Our analog and digital sensors work with DC single supply of +5V. In contrast, the ESP-32 family input pins have a maximum voltage tolerance of around +3.3V. In order to overcome this problem, we use **Logic Level Shifters**. Those modules consist of MOSFETs able to transmit the input signal amplitude accordingly. This principle is presented on the figure below. 
+<p align = "center">
+  <img width="335.5" height="233" alt="image" src="https://github.com/user-attachments/assets/c1c52cf6-4ae4-4ff1-ae39-68d3a53f0af9" />
+</p>
 
 ## Project Index
 #### 1. [Block_Diagrams](/Block_Diagrams)
