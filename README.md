@@ -52,7 +52,11 @@ On the diagram below, the working principle of our capacitive soil moisture sens
 
 ![alt text](https://github.com/sidirima/esp32_env_data_acquisistion_system/blob/main/Block_Diagrams/Soil_moisture_sensor.png)
 
-In order to achieve this, we connect the first of the electrodes with a simple 400 kHz **square wave generator**. The most effective way of creating a desired frequency square wave generatior is using a 555 timer IC (TLC555) connected as an **Astable Multivibrator** circuit.  
+In order to achieve this, we connect the first of the electrodes with a simple 400 kHz **square wave generator**. The most effective way of creating a desired frequency square wave generatior is using a 555 timer IC (TLC555) connected as an **Astable Multivibrator** circuit. Amplitude of square wave pulse sigmal is 5V due to DC value of the power supply. 
+
+The electrodes of the sensor are depicted as capacitor C_SOIL in the block diagram. As the capacitance value fluctuates, cutoff frequency of the RC low - pass filter also fluctuates. 
+
+Using a simple silicon diode (1N4148) as a peak detector circuit, we can determine the capacitance value of soil using the cutoff frequency.
 
 
 ## Project Index
