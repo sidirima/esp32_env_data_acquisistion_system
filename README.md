@@ -40,9 +40,9 @@ The system is capable of measuring 8 different environmental parameters both atm
 ### Soil Temperature Sensor
 As shown in the block diagram below, temperature of soil is calculated using an NTC Thermistor, which is a special kind of resistor capable of varying its resistance according to temperature fluctuations.
 We prefer to use a passive resistive element instead of an RTD due to its low power consumption.
-
-![alt text](https://github.com/sidirima/esp32_env_data_acquisistion_system/blob/main/Block_Diagrams/Soil_temperature_sensor.png)
-
+<p align = "center">
+  <img src= "https://github.com/sidirima/esp32_env_data_acquisistion_system/blob/main/Block_Diagrams/Soil_temperature_sensor.png">
+</p>
 To measure temperature fluctuations of the NTC Thermistor we use a **Wheatstone bridge** topology, consisting of 4 resistors connected in 2 parallel branches, each consisting of 2 series resistors. We connect a DC voltage source (5V) at one end of the branch as shown in the picture and the other side is connected to ground. When the two branches of the bridge are balanced, the output voltage is 0V.
 
 The differential output of the bridge is then connected to an **Instrumentation Amplifier**, a special Operational Amplifier topology frequently used in analog sensors. This circuit is designed to amplify the very sensitive signals of passive analog sensors. Reason for that is that the differential signals are quite smaller than common mode signals, therefore a common operational amplifier could not offer the desired amplification. Although we can find many instrumentation amplifier ICs ready to use, we prefer to use a simple LMC662 operational amplifier IC due to its significantly lower price. It is important to use a rail-to-rail operational amplifier IC so as to measure most accurate voltage readings.
@@ -54,10 +54,14 @@ On the diagram below, the working principle of our capacitive soil moisture sens
 
 In order to achieve this, we connect the first of the electrodes with a simple 400 kHz **square wave generator**. The most effective way of creating a desired frequency square wave generatior is using a 555 timer IC (TLC555) connected as an **Astable Multivibrator** circuit. Amplitude of square wave pulse sigmal is 5V due to DC value of the power supply. 
 
-The electrodes of the sensor are depicted as capacitor C_SOIL in the block diagram. As the capacitance value fluctuates, cutoff frequency of the RC low - pass filter also fluctuates. 
+The electrodes of the sensor are depicted as capacitor **C_SOIL** in the block diagram. As the capacitance value fluctuates, cutoff frequency of the RC low - pass filter also fluctuates. 
 
-Using a simple silicon diode (1N4148) as a peak detector circuit, we can determine the capacitance value of soil using the cutoff frequency.
+Using a simple silicon diode (1N4148) as a **peak detector** circuit, we can determine the capacitance value of soil using the cutoff frequency.
 
+## Choosing an Analog-to-Digital Converter (ADC)
+The ESP-32 family of microcontrollers has an internal 12-bit **Analog-to-Digital Converter**, although it is recommended to use an external one due to its poor linearity when dealing with accurate sensor signals, specifically when using wireless connections, due to electromagnetic noise. 
+
+In our project, we decided to use the ADS1015, which is a 12-bit resolution ADC as well. This ADC is very commonly used in ESP-32 projects and there are many libraries in Arduino IDE supporting it. This specific IC supports both I²C and SPI serial communication protocols.
 
 ## Project Index
 #### 1. [Block_Diagrams](/Block_Diagrams)
