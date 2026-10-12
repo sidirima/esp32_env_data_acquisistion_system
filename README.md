@@ -47,6 +47,13 @@ To measure temperature fluctuations of the NTC Thermistor we use a **Wheatstone 
 
 The differential output of the bridge is then connected to an **Instrumentation Amplifier**, a special Operational Amplifier topology frequently used in analog sensors. This circuit is designed to amplify the very sensitive signals of passive analog sensors. Reason for that is that the differential signals are quite smaller than common mode signals, therefore a common operational amplifier could not offer the desired amplification. Although we can find many instrumentation amplifier ICs ready to use, we prefer to use a simple LMC662 operational amplifier IC due to its significantly lower price. It is important to use a rail-to-rail operational amplifier IC so as to measure most accurate voltage readings.
 
+### Soil Moisture Sensor
+On the diagram below, the working principle of our capacitive soil moisture sensor is depicted. The sensor probe consists of two electrodes tucked in soil, creating an electrostatic field. Fluctuations of water content in soil also fluctuate its relative permitivity. Those fluctuatuations are then translated as changes in the capacitance of the sensor. We need a way of measuring that capacitance to determine the water content of soil.
+
+![alt text](https://github.com/sidirima/esp32_env_data_acquisistion_system/blob/main/Block_Diagrams/Soil_moisture_sensor.png)
+
+In order to achieve this, we connect the first of the electrodes with a simple 400 kHz **square wave generator**. The most effective way of creating a desired frequency square wave generatior is using a 555 timer IC (TLC555) connected as an **Astable Multivibrator** circuit.  
+
 
 ## Project Index
 #### 1. [Block_Diagrams](/Block_Diagrams)
