@@ -1,6 +1,6 @@
 # ESP-32 Environmental Data Acquisition System
-This project was my Integrated Master's Thesis in Department of Informatics & Electronics Engineering of International Hellenic University (IHU), alongside Androniki Kolete. 
-Her part of the project (database, web interface) can be found [here]().
+This project was my Integrated Master's Thesis in Department of Informatics & Electronics Engineering of International Hellenic University (IHU), alongside [Androniki Kolete](https://www.linkedin.com/in/nikikolete/). 
+Her part of the project (database, web interface) can be found [here](https://github.com/Nikiko256/data_visualization).
 I was responsible for the hardware engineering part of the project, including the ESP-32, designing the sensors and the PCB and also the power supply.
 
 ## Purpose - Key Objective
