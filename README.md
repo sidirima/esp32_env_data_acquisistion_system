@@ -8,6 +8,22 @@ The purpose of the project is to design and implement an IoT system capable of m
 
 Design of the web interface prioritizes the User Experience (UX), creating a user-friendly website which offers many visualization preferences, notifications and statistics about the stored data.
 
+## Project Index
+#### 1. [Block_Diagrams](/Block_Diagrams)
+Contains block diagrams for every hardware part of the project, including a block-diagram of the full project principle.
+
+#### 2. [ESP32_code](/ESP32_code)
+Contains the ESP-32 Arduino IDE programming files for Transmitter & Receiver parts of the project.
+
+#### 3. [Schematics](/Schematics)
+Contains PDF files of Altium Designer Schematics of Transmitter and Receiver parts.
+
+#### 4. [Altium_PCB_Design](/Altium_PCB_Design)
+Contains photos of the PCB and also the Gerber files extracted from Altium Designer to use for PCB manufacturing.
+
+#### 5. [Final_Product_Photos](/Final_Product_Photos)
+Contains photos of the final product (transmitter / receiver) and video presentation of Web Interface usability.
+
 ## Full System Block Diagram
 In the Figure below we can see the 3 distinct parts of the project. 
 
@@ -68,19 +84,3 @@ Our analog and digital sensors work with DC single supply of +5V. In contrast, t
 <p align = "center">
   <img width="335.5" height="233" alt="image" src="https://github.com/user-attachments/assets/c1c52cf6-4ae4-4ff1-ae39-68d3a53f0af9" />
 </p>
-
-## Project Index
-#### 1. [Block_Diagrams](/Block_Diagrams)
-Contains block diagrams for every hardware part of the project, including a block-diagram of the full project principle.
-
-#### 2. [ESP32_code](/ESP32_code)
-Contains the ESP-32 Arduino IDE programming files for Transmitter & Receiver parts of the project.
-
-#### 3. [Schematics](/Schematics)
-Contains PDF files of Altium Designer Schematics of Transmitter and Receiver parts.
-
-#### 4. [Altium_PCB_Design](/Altium_PCB_Design)
-Contains photos of the PCB and also the Gerber files extracted from Altium Designer to use for PCB manufacturing.
-
-#### 5. [Final_Product_Photos](/Final_Product_Photos)
-Contains photos of the final product (transmitter / receiver) and video presentation of Web Interface usability.
