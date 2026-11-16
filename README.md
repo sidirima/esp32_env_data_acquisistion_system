@@ -86,7 +86,7 @@ The A3144 Hall Effect Sensor is used as a counter of buckets filled. In order to
 </p>  
 
 $$
-\text{RainDepth}_{(\text{mm/hr})} = N_{(\text{min})} \times V_{\text{bucket}} \times 60\,\text{min}
+\text{Rain Depth}_{(\text{mm/hr})} = N_{(\text{min})} \times V_{\text{bucket}} \times 60\,\text{min}
 $$
 
 
