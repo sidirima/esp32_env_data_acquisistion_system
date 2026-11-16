@@ -79,7 +79,7 @@ Using a simple silicon diode (1N4148) as a **peak detector** circuit, we can det
 This sensor is based on the typical tipping bucket rain depth measuring device. With every bucket containing a specific amount of water, we only need to count how many buckets are filled in one minute of an hour and then perform a calculation of how many mm of rain will fall in the next hour.
 
 $$
-\text{Rain Depth}_{(\text{mm/hr})} = N_{(\text{min})} \times V_{\text{bucket}} \times 60\,\text{min}
+\text{Rain Depth}_{(\text{mm/hr})} = N_{(\text{min})} \times V_{\text{bucket}} \times 60 \text{min}
 $$
 
 The A3144 Hall Effect Sensor is used as a counter of buckets filled. In order to trigger the Hall Effect sensor we place a magnet between the two buckets, in a place that only when one of the buckets triggers the sensor when filling. This position is shown in the diagram on the picture below.
