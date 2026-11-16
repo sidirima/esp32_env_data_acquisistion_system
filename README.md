@@ -74,6 +74,12 @@ The electrodes of the sensor are depicted as capacitor **C_SOIL** in the block d
 
 Using a simple silicon diode (1N4148) as a **peak detector** circuit, we can determine the capacitance value of soil using the cutoff frequency.
 
+
+## Choosing an Analog-to-Digital Converter (ADC)
+The ESP-32 family of microcontrollers has an internal 12-bit **Analog-to-Digital Converter**, although it is recommended to use an external one due to its poor linearity when dealing with accurate sensor signals, specifically when using wireless connections, due to electromagnetic noise. 
+
+In our project, we decided to use the ADS1015, which is a 12-bit resolution ADC as well. This ADC is very commonly used in ESP-32 projects and there are many libraries in Arduino IDE supporting it. This specific IC supports both I²C and SPI serial communication protocols. We chose the I²C protocol. This IC comes only in SMD packaging, so we use a DIP module for easier PCB assembling.
+
 ## Hall-Effect based Sensors Working Principles
 ### Rain Depth Meter
 This sensor is based on the typical tipping bucket rain depth measuring device. With every bucket containing a specific amount of water, we only need to count how many buckets are filled in one minute of an hour and then perform a calculation of how many mm of rain will fall in the next hour.
@@ -85,15 +91,17 @@ $$
 The A3144 Hall Effect Sensor is used as a counter of buckets filled. In order to trigger the Hall Effect sensor we place a magnet between the two buckets, in a place that only when one of the buckets triggers the sensor when filling. This position is shown in the diagram on the picture below.
 
 <p align = "center">
-  <img width="521" height="341" alt="ΑΙΣΘΗΤΗΡΑΣ ΥΨΟΥΣ ΒΡΟΧΗΣ drawio" src="https://github.com/user-attachments/assets/b5f2a285-6384-467b-83e7-600eafd4fe3b" />
+  <img width="521"  alt="ΑΙΣΘΗΤΗΡΑΣ ΥΨΟΥΣ ΒΡΟΧΗΣ (white)" src="https://github.com/user-attachments/assets/2368896e-8c18-495a-8da9-ffed0a5765aa" />
 </p>  
 
+### Wind Speed Sensor
+This sensor is based on the cup anemometer principle. The A3144 sensor is used to count the number of rotations per minute (rpm). One magnet is put inside the anemometer assembly in a fixed position so as to trigger the sensor every time that passes right over. This is better described in the picture below. To calculate the rpm, we just need the number of times the magnet has passed over the sensor.
 
+<p align = "center">
+  <img width="444" height="564" alt="ΑΙΣΘΗΤΗΡΑΣ ΤΑΧΥΤΗΤΑΣ ΑΝΕΜΟΥ (white)" src="https://github.com/user-attachments/assets/70af5325-f19d-423c-8106-57bfacf77ce7" />
+</p>
 
-## Choosing an Analog-to-Digital Converter (ADC)
-The ESP-32 family of microcontrollers has an internal 12-bit **Analog-to-Digital Converter**, although it is recommended to use an external one due to its poor linearity when dealing with accurate sensor signals, specifically when using wireless connections, due to electromagnetic noise. 
-
-In our project, we decided to use the ADS1015, which is a 12-bit resolution ADC as well. This ADC is very commonly used in ESP-32 projects and there are many libraries in Arduino IDE supporting it. This specific IC supports both I²C and SPI serial communication protocols. We chose the I²C protocol. This IC comes only in SMD packaging, so we use a DIP module for easier PCB assembling.
+### Wind Direction Sensor 
 
 ## Logic Level Shifting
 Our analog and digital sensors work with DC single supply of +5V. In contrast, the ESP-32 family input pins have a maximum voltage tolerance of around +3.3V. In order to overcome this problem, we use **Logic Level Shifters**. Those modules consist of MOSFETs able to transmit the input signal amplitude accordingly. This principle is presented on the figure below. 
