@@ -74,6 +74,22 @@ The electrodes of the sensor are depicted as capacitor **C_SOIL** in the block d
 
 Using a simple silicon diode (1N4148) as a **peak detector** circuit, we can determine the capacitance value of soil using the cutoff frequency.
 
+## Hall-Effect based Sensors Working Principles
+### Rain Depth Meter
+This sensor is based on the typical tipping bucket rain depth measuring device. With every bucket containing a specific amount of water, we only need to count how many buckets are filled in one minute of an hour and then perform a calculation
+
+
+The A3144 Hall Effect Sensor is used as a counter of buckets filled. In order to trigger the Hall Effect sensor we place a magnet between the two buckets, in a place that only when one of the buckets triggers the sensor when filling. This position is shown in the diagram on the picture below.
+
+<p align = "center">
+  <img width="521" height="341" alt="ΑΙΣΘΗΤΗΡΑΣ ΥΨΟΥΣ ΒΡΟΧΗΣ drawio" src="https://github.com/user-attachments/assets/b5f2a285-6384-467b-83e7-600eafd4fe3b" />
+</p>  
+
+$$
+\text{RainDepth}_{(\text{mm/hr})} = N_{(\text{min})} \times V_{\text{bucket}} \times 60\,\text{min}
+$$
+
+
 ## Choosing an Analog-to-Digital Converter (ADC)
 The ESP-32 family of microcontrollers has an internal 12-bit **Analog-to-Digital Converter**, although it is recommended to use an external one due to its poor linearity when dealing with accurate sensor signals, specifically when using wireless connections, due to electromagnetic noise. 
 
